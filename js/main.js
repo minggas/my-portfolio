@@ -1,12 +1,12 @@
+//NavBar module
 (function () {
-  /* jshint validthis: true */
   'use strict';
 
-  let posY = 0;
-  const navBar = document.getElementById('nav-bar');
   const navMenu = document.querySelector('.collapse-menu');
   const menuToggle = document.querySelector('.nav-toggler');
   const sections = document.querySelectorAll('.section');
+  const links = document.querySelectorAll('.nav-link');
+  document.getElementById('footerTxt').innerHTML = `minggas@${new Date().getFullYear()}`;
 
 
   //Debounce Function to minimize the numbers of scroll events
@@ -31,13 +31,6 @@
   }
 
   function checkSlide() {
-    navBar.classList[posY > 5 ? 'add' : 'remove']('nav-bg');
-    if (window.scrollY < posY) {
-      removeClass();
-    } else {
-      addClass();
-    }
-    posY = window.scrollY;
     sections.forEach(section => {
       // half way through the image
       const sectionAt = (window.scrollY + window.innerHeight) - section.offsetHeight / 2;
@@ -52,19 +45,11 @@
     });
   }
 
-  function removeClass() {
-    navBar.classList.remove('hidden');
-  }
-
-  function addClass() {
-    navBar.classList.add('hidden');
-    navMenu.classList.remove('hidden');
-  }
-
   function toggleHidden() {
-    navMenu.classList.toggle('hidden');
+    navMenu.classList.toggle('show');
   }
 
+  links.forEach(link => link.addEventListener('click', toggleHidden));
   menuToggle.addEventListener('click', toggleHidden);
   window.addEventListener('scroll', debounce(checkSlide));
   //Smooth scroll to nav throught page
@@ -76,4 +61,23 @@
       });
     });
   });
-}());
+})();
+
+//Panels for Portfolio
+(function () {
+  "use strict";  
+  const panels = document.querySelectorAll('.project-tile');
+  panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+  panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
+  function toggleOpen() {
+      this.classList.toggle('open');
+      this.children[2].classList.toggle('show');
+  }
+
+  function toggleActive(e) {
+      if (e.propertyName.includes('flex')) {
+          this.classList.toggle('project-tile-active');
+      }
+  }    
+})();
