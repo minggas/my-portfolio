@@ -3,26 +3,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
 }
 
 html {
     font-family: 'Alegreya Sans SC', sans-serif;
-    
 }
 
 body {
     background-color: hsl(233, 25%, 89%);
     overflow-x: hidden;
-    
 }
 
 li {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
-h2{
+
+h2 {
     font-size: 55px;
     letter-spacing: 3px;
 }
@@ -38,7 +39,7 @@ h2{
 .nav-bar {
     padding: 10px 3%;
     width: 100%;
-    min-height: 50px;
+    height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -46,16 +47,15 @@ h2{
     position: fixed;
     top: 0;
     z-index: 9999;
-    transition: 0.6s ease-in-out;
+    transition: 0.3s ease-in-out;
+    background-color: hsla(233, 15%, 70%, 0.95);
 }
 
-.nav-bar.hidden {
-    position: fixed;
-    top: -100%;
-}
-
-.nav-bar.nav-bg {
-    background: hsla(233, 15%, 70%, 0.95);
+.nav-bar svg {
+    width: 30px;
+    height: 30px;
+    fill: hsl(205, 16.2%, 85.5%);
+    cursor: pointer;
 }
 
 .nav-bar .nav-logo {
@@ -88,12 +88,12 @@ h2{
 */
 
 header {
-    width: 100vw;    
+    width: 100vw;
     background-size: cover;
     background-attachment: fixed;
-    background-image:linear-gradient(hsla(222, 33%, 62%, 0.6),hsla(222, 33%, 62%, 0.6)), url('pexels-photo.jpg');
+    background-image: linear-gradient(hsla(222, 33%, 62%, 0.6), hsla(222, 33%, 62%, 0.6));
     height: 100vh;
-    display: flex;    
+    display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 5%;
@@ -106,10 +106,10 @@ header {
     display: flex;
     align-items: center;
 }
+
 .main-text-header span {
     color: hsl(0, 59%, 41%);
 }
-
 
 /* 
 #############################################
@@ -118,7 +118,7 @@ header {
 */
 
 main {
-    width: 100%;    
+    width: 100%;
 }
 
 .tagline {
@@ -143,11 +143,6 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
     grid-template-rows: 1.2fr 2fr;
-}
-
-.about img {
-    width: 100%;
-    height: auto;
 }
 
 .skill-card {
@@ -217,7 +212,7 @@ main {
 }
 
 .about-banner .img-banner {
-    background: url('me.jpg')no-repeat;
+    background: url('https://drive.google.com/uc?export=view&id=1Dri1j9XOGJ5lb5voVqOH_jkVQgCWAASg')no-repeat center;
     background-size: cover;
 }
 
@@ -234,17 +229,15 @@ main {
 }
 
 .about-banner .banner-title {
-    
     line-height: 60px;
     color: hsla(233, 71%, 49%, 0.8);
-    
 }
 
 .about-banner .banner-text span {
     font-size: 1.3rem;
     line-height: 2rem;
     letter-spacing: 1.5px;
-    text-align: center;
+    text-align: justify;
     margin-top: 30px;
 }
 
@@ -253,11 +246,12 @@ main {
 .portfolio {
     width: 100vw;
     height: 100vh;
+    min-height: 400px;
     display: flex;
     overflow: hidden;
 }
 
-.panel {
+.project-tile {
     flex: 1;
     transition: 0.7s cubic-bezier(0.32, -0.39, 1, 1);
     display: flex;
@@ -267,7 +261,7 @@ main {
     overflow: hidden;
 }
 
-.panel figure.img-port {
+.project-tile figure.img-port {
     transform: translateY(200%);
     padding: 2%;
     background: hsl(203, 21%, 20%);
@@ -285,13 +279,13 @@ figure.img-port.show {
     display: block;
 }
 
-.panel figure.img-port img {
+.project-tile figure.img-port img {
     width: 100%;
     height: 100%;
     border: 1px solid hsla(203, 21%, 90%, 0.2);
 }
 
-.panel>* {
+.project-tile>* {
     text-align: center;
     flex: 1;
     width: 100%;
@@ -301,27 +295,27 @@ figure.img-port.show {
     transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.panel h2 {
+.project-tile h2 {
     font-size: calc(1.5rem + 2vw);
 }
 
-.panel span:last-child {
+.project-tile span:last-child {
     transform: translateY(200%);
 }
 
-.panel span:first-child {
+.project-tile span:first-child {
     transform: translateY(-200%);
 }
 
-.panel-active span:last-child {
+.project-tile-active span:last-child {
     transform: translateY(0);
 }
 
-.panel-active span:first-child {
+.project-tile-active span:first-child {
     transform: translateY(0);
 }
 
-.panel-active figure.img-port {
+.project-tile-active figure.img-port {
     width: 55%;
     transform: translateY(0);
 }
@@ -331,15 +325,15 @@ figure.img-port.show {
 }
 
 .port2 {
-    background: hsla(88, 16%, 65%,0.3);
+    background: hsla(88, 16%, 65%, 0.3);
 }
 
 .port3 {
-    background: hsla(292, 100%, 34%,0.3);
+    background: hsla(292, 100%, 34%, 0.3);
 }
 
 .port4 {
-    background: hsla(14, 77%, 54%,0.3);
+    background: hsla(14, 77%, 54%, 0.3);
 }
 
 .open {
@@ -369,12 +363,16 @@ figure.img-port.show {
     height: 50px;
 }
 
+.contact a:hover svg {
+    fill: hsl(203, 51%, 60%);
+}
+
 .contact li,
 .contact ul {
     height: 100%;
 }
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -382,21 +380,22 @@ footer{
     background: hsla(233, 15%, 70%, 0.95);
     margin-top: 30px;
 }
+
 /*
 ###################################################
 #####         MEDIA QUERIES      ##############
 ##########################################
 */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .collapse-menu {
         display: none;
         padding: 15px 0 5px;
         position: absolute;
-        top: 50px;
+        top: 60px;
         width: 100%;
         flex-direction: column;
-        transition: 0.7s transform ease-in-out;
+        transition: 0.5s transform ease-in-out;
         z-index: 0;
         transform: scaleY(0);
         transform-origin: 0% 0%;
@@ -408,7 +407,7 @@ footer{
     .nav-toggler {
         display: block;
     }
-    .collapse-menu.hidden {
+    .collapse-menu.show {
         display: block;
         transform: scaleY(1);
     }
@@ -417,7 +416,7 @@ footer{
         display: block;
     }
     .about-banner .img-banner {
-        background-size: cover;
+        height: 50vmin;
     }
     .skill-card {
         flex-direction: row;
