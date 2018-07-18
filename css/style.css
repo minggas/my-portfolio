@@ -24,7 +24,7 @@ a {
 }
 
 h2 {
-    font-size: 55px;
+    font-size: calc(20px + 1.5vw);
     letter-spacing: 3px;
 }
 
@@ -184,7 +184,7 @@ main {
     min-width: 6rem;
     height: 100px;
     text-align: center;
-    padding: 2%;
+    padding: 5%;
     font-size: calc(2.1rem + 2.2vw);
     background: hsl(233, 25%, 89%);
 }
@@ -212,7 +212,7 @@ main {
 }
 
 .about-banner .img-banner {
-    background: url('https://drive.google.com/uc?export=view&id=1Dri1j9XOGJ5lb5voVqOH_jkVQgCWAASg')no-repeat center;
+    background: url('https://drive.google.com/uc?export=view&id=1hCUjTA4NfK1-szDL3vBbeD_pns4lSLEH')no-repeat center;
     background-size: cover;
 }
 
@@ -229,16 +229,16 @@ main {
 }
 
 .about-banner .banner-title {
-    line-height: 60px;
+    line-height: 40px;
     color: hsla(233, 71%, 49%, 0.8);
 }
 
 .about-banner .banner-text span {
-    font-size: 1.3rem;
+    font-size: calc(10px + 1vw);
     line-height: 2rem;
     letter-spacing: 1.5px;
     text-align: justify;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 /*Portfolio Section */
@@ -296,7 +296,7 @@ figure.img-port.show {
 }
 
 .project-tile h2 {
-    font-size: calc(1.5rem + 2vw);
+    font-size: calc(1rem + 1.5vw);
 }
 
 .project-tile span:last-child {
@@ -404,6 +404,9 @@ footer {
     .collapse-menu li {
         margin: 10px 0;
     }
+    .tagline {
+        height: 200px;
+    }
     .nav-toggler {
         display: block;
     }
@@ -418,10 +421,16 @@ footer {
     .about-banner .img-banner {
         height: 50vmin;
     }
+    .about-banner .banner-text span{
+        margin-top: 10px;
+    }
     .skill-card {
         flex-direction: row;
         margin-top: 0;
         padding: 1%;
+    }
+    .skill-card .img-card {
+        padding: 2%;
     }
     .skill-card hr {
         display: none;

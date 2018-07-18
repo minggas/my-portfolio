@@ -6,8 +6,6 @@
   const menuToggle = document.querySelector('.nav-toggler');
   const sections = document.querySelectorAll('.section');
   const links = document.querySelectorAll('.nav-link');
-  document.getElementById('footerTxt').innerHTML = `minggas@${new Date().getFullYear()}`;
-
 
   //Debounce Function to minimize the numbers of scroll events
   function debounce(func, wait = 10, immediate = true) {
@@ -32,9 +30,7 @@
 
   function checkSlide() {
     sections.forEach(section => {
-      // half way through the image
       const sectionAt = (window.scrollY + window.innerHeight) - section.offsetHeight / 2;
-      // bottom of the image
       const imageBottom = section.offsetTop + section.offsetHeight;
       const isHalfShown = sectionAt > section.offsetTop;
       const isNotScrolledPast = window.scrollY < imageBottom;
@@ -81,3 +77,6 @@
       }
   }    
 })();
+
+//Put year on footer
+document.getElementById('footerTxt').innerHTML = `minggas@${new Date().getFullYear()}`;
