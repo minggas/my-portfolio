@@ -31,9 +31,30 @@ h2 {
 /* 
 #########################          NAVBAR       ##########################
 */
+.collapse-menu {
+    display: none;
+    padding: 15px 0 5px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    flex-direction: column;
+    transition: 0.5s transform ease-in-out;
+    z-index: 0;
+    transform: scaleY(0);
+    transform-origin: 0% 0%;
+    background: inherit;
+}
+.collapse-menu li {
+    margin: 10px 0;
+}
+
+.collapse-menu.show {
+    display: block;
+    transform: scaleY(1);
+}
 
 .nav-toggler {
-    display: none;
+    display: block;
 }
 
 .nav-bar {
@@ -91,7 +112,7 @@ header {
     width: 100vw;
     background-size: cover;
     background-attachment: fixed;
-    background-image: linear-gradient(hsla(222, 33%, 62%, 0.6), hsla(222, 33%, 62%, 0.6));
+    background-image: linear-gradient(hsla(222, 33%, 62%, 0.6), hsla(222, 33%, 12%, 0.6)), url('https://drive.google.com/uc?export=view&id=1hCUjTA4NfK1-szDL3vBbeD_pns4lSLEH');
     height: 100vh;
     display: flex;
     justify-content: flex-end;
@@ -123,7 +144,7 @@ main {
 
 .tagline {
     width: 100%;
-    height: 350px;
+    height: 200px;
     background-color: hsl(233, 25%, 79%);
     padding: 5%;
     border-top: 1px solid #F4F5EE;
@@ -138,21 +159,33 @@ main {
 
 /* About Section */
 
-.about {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
-    grid-template-rows: 1.2fr 2fr;
+.about,
+.about-banner {
+    display: block;
 }
 
 .skill-card {
-    margin-top: -50px;
     grid-column: span 1;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding: 0 5% 10%;
+    flex-direction: row;
+    margin-top: 0;
+    padding: 1%;
 }
+.skill-card .img-card {
+    border-radius: 50%;
+        min-width: 6rem;
+        height: 100px;
+        text-align: center;
+        padding: 2%;
+        font-size: calc(2.1rem + 2.2vw);
+        background: hsl(233, 25%, 89%);
+}
+.skill-card hr {
+    display: none;
+}
+
+
 
 .skill-card .card-title {
     font-size: 1.3rem;
@@ -170,6 +203,7 @@ main {
 .text-card {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .skill-card dd {
@@ -177,16 +211,6 @@ main {
     line-height: 1.5rem;
     font-size: 1rem;
     color: hsla(203, 21%, 20%, 0.8)
-}
-
-.skill-card .img-card {
-    border-radius: 50%;
-    min-width: 6rem;
-    height: 100px;
-    text-align: center;
-    padding: 5%;
-    font-size: calc(2.1rem + 2.2vw);
-    background: hsl(233, 25%, 89%);
 }
 
 .img-card-1 {
@@ -205,13 +229,10 @@ main {
     color: hsla(233, 30%, 68%, 0.9);
 }
 
-.about-banner {
-    grid-column: span 4;
-    display: flex;
-    min-height: 380px;
-}
+
 
 .about-banner .img-banner {
+    min-height: 50vmin;
     background: url('https://drive.google.com/uc?export=view&id=1hCUjTA4NfK1-szDL3vBbeD_pns4lSLEH')no-repeat center;
     background-size: cover;
 }
@@ -238,7 +259,7 @@ main {
     line-height: 2rem;
     letter-spacing: 1.5px;
     text-align: justify;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 /*Portfolio Section */
@@ -249,6 +270,7 @@ main {
     min-height: 400px;
     display: flex;
     overflow: hidden;
+    flex-direction: column;
 }
 
 .project-tile {
@@ -387,55 +409,45 @@ footer {
 ##########################################
 */
 
-@media (max-width: 800px) {
-    .collapse-menu {
-        display: none;
-        padding: 15px 0 5px;
-        position: absolute;
-        top: 60px;
-        width: 100%;
-        flex-direction: column;
-        transition: 0.5s transform ease-in-out;
-        z-index: 0;
-        transform: scaleY(0);
-        transform-origin: 0% 0%;
-        background: inherit;
-    }
-    .collapse-menu li {
-        margin: 10px 0;
-    }
+@media (min-width: 800px) {
+   
     .tagline {
-        height: 200px;
+        height: 350px;
     }
+
     .nav-toggler {
-        display: block;
-    }
-    .collapse-menu.show {
-        display: block;
-        transform: scaleY(1);
-    }
-    .about,
-    .about-banner {
-        display: block;
-    }
-    .about-banner .img-banner {
-        height: 50vmin;
-    }
-    .about-banner .banner-text span{
-        margin-top: 10px;
-    }
-    .skill-card {
-        flex-direction: row;
-        margin-top: 0;
-        padding: 1%;
-    }
-    .skill-card .img-card {
-        padding: 2%;
-    }
-    .skill-card hr {
         display: none;
+    }    
+   
+    .about {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+        grid-template-rows: 1.2fr 2fr;
     }
-    .portfolio {
+
+    .about-banner {
+        grid-column: span 4;
+        display: flex;
+        min-height: 380px;
+    }
+
+    .about-banner .banner-text span{
+        margin-top: 40px;
+    }
+
+    .skill-card {
+        margin-top: -50px;
+       
         flex-direction: column;
+        padding: 0 5% 10%;
+    }
+
+    .skill-card .img-card {
+        padding: 5%;
+    }   
+    
+    .portfolio {
+        flex-direction: row;
     }
 }
