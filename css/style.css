@@ -28,6 +28,10 @@ h2 {
     letter-spacing: 3px;
 }
 
+.skills, .contact {
+    padding: 2%;
+}
+
 /* 
 #########################          NAVBAR       ##########################
 */
@@ -361,12 +365,33 @@ figure.img-port.show {
 .open {
     flex: 6;
 }
+/* Skills Section */
+
+.skills ul {
+    display: flex;
+    margin: 20px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills li {
+    width: 25%; 
+    margin: 10px;
+    padding: 5px;
+}
+
+.skills li img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
 
 /* Contact Section */
 
 .contact {
-    height: 200px;
-    padding: 2%;
+    height: 150px;
+
 }
 
 .contact ul {
@@ -448,5 +473,9 @@ footer {
     }
     .portfolio {
         flex-direction: row;
+    }
+
+    .skills ul {
+        flex-wrap: nowrap;
     }
 }
