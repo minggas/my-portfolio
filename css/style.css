@@ -31,6 +31,7 @@ h2 {
 /* 
 #########################          NAVBAR       ##########################
 */
+
 .collapse-menu {
     display: none;
     padding: 15px 0 5px;
@@ -44,6 +45,7 @@ h2 {
     transform-origin: 0% 0%;
     background: inherit;
 }
+
 .collapse-menu li {
     margin: 10px 0;
 }
@@ -172,20 +174,20 @@ main {
     margin-top: 0;
     padding: 1%;
 }
+
 .skill-card .img-card {
     border-radius: 50%;
-        min-width: 6rem;
-        height: 100px;
-        text-align: center;
-        padding: 2%;
-        font-size: calc(2.1rem + 2.2vw);
-        background: hsl(233, 25%, 89%);
+    min-width: 6rem;
+    height: 100px;
+    text-align: center;
+    padding: 2%;
+    font-size: calc(2.1rem + 2.2vw);
+    background: hsl(233, 25%, 89%);
 }
+
 .skill-card hr {
     display: none;
 }
-
-
 
 .skill-card .card-title {
     font-size: 1.3rem;
@@ -228,8 +230,6 @@ main {
 .img-card-4 {
     color: hsla(233, 30%, 68%, 0.9);
 }
-
-
 
 .about-banner .img-banner {
     min-height: 50vmin;
@@ -410,43 +410,42 @@ footer {
 */
 
 @media (min-width: 800px) {
-   
+    .collapse-menu {
+        display: block;
+        padding: 0;
+        position: static;
+        flex-direction: row;
+        transform: scaleY(1);
+        background: transparent;
+    }
     .tagline {
         height: 350px;
     }
-
     .nav-toggler {
         display: none;
-    }    
-   
+    }
     .about {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 1rem;
         grid-template-rows: 1.2fr 2fr;
     }
-
     .about-banner {
         grid-column: span 4;
         display: flex;
         min-height: 380px;
     }
-
-    .about-banner .banner-text span{
+    .about-banner .banner-text span {
         margin-top: 40px;
     }
-
     .skill-card {
         margin-top: -50px;
-       
         flex-direction: column;
         padding: 0 5% 10%;
     }
-
     .skill-card .img-card {
         padding: 5%;
-    }   
-    
+    }
     .portfolio {
         flex-direction: row;
     }
