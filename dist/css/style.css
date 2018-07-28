@@ -32,6 +32,10 @@ h2 {
     padding: 2%;
 }
 
+textarea {
+    resize: none;
+ }
+
 /* 
 #########################          NAVBAR       ##########################
 */
@@ -61,6 +65,9 @@ h2 {
 
 .nav-toggler {
     display: block;
+    width: 35px;
+    height: 35px; 
+    cursor: pointer;   
 }
 
 .nav-bar {
@@ -76,13 +83,6 @@ h2 {
     z-index: 9999;
     transition: 0.3s ease-in-out;
     background-color: hsla(233, 15%, 70%, 0.95);
-}
-
-.nav-bar svg {
-    width: 30px;
-    height: 30px;
-    fill: hsl(205, 16.2%, 85.5%);
-    cursor: pointer;
 }
 
 .nav-bar .nav-logo {
@@ -285,6 +285,10 @@ main {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    cursor: pointer;
+}
+.project-tile-active{
+    cursor: default;
 }
 
 .project-tile figure.img-port {
@@ -371,7 +375,7 @@ figure.img-port.show {
     display: flex;
     margin: 20px 10px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center;    
 }
 
 .skills li {
@@ -389,18 +393,8 @@ figure.img-port.show {
 
 /* Contact Section */
 
-.contact {
-    height: 150px;
-
-}
-
-.contact ul {
-    display: flex;
-}
-
 .contact li {
-    flex: 1;
-    display: flex;
+    flex: 1;  
     justify-content: center;
     align-items: center;
 }
@@ -416,7 +410,36 @@ figure.img-port.show {
 
 .contact li,
 .contact ul {
+    display: flex;
     height: 100%;
+    margin: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 10%;
+    padding: 10px;    
+    background-color: white;  
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);  
+}
+.contact-form, .contact-form>*{
+    border-radius: 5px;
+    
+}
+
+.contact-form>*{
+    margin: 5px;
+    padding: 8px;    
+    border: 1px solid rgba(0,0,0,0.2);   
+   
+}
+
+.contact-form input[type="submit"] {
+    width: 150px;
+    text-align: center;
+    align-self: center;
+    padding: 10px 30px;
 }
 
 footer {
@@ -477,5 +500,13 @@ footer {
 
     .skills ul {
         flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+    .skills li {
+        width: 10%;
+        
+    }
+    .contact-form input[type="submit"] {
+        align-self: flex-end;
     }
 }

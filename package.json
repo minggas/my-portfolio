@@ -1,0 +1,28 @@
+{
+  "name": "minggas-portolio",
+  "version": "1.0.0",
+  "description": "Minggas portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w /scss -o dist/css/ --recursive",
+    "babel": "npx babel js/main.js --watch --out-file dist/js/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/minggas/my-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "webdeveloper",
+    "frontend"
+  ],
+  "author": "minggas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/minggas/my-portfolio/issues"
+  },
+  "homepage": "https://minggas.github.io/my-portfolio",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
