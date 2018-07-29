@@ -1,0 +1,48 @@
+@include mediaXl {
+  .skills ul {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+}
+
+// Desktops & Laptops
+@include mediaLg {
+  .about {
+    .skill-card {
+      flex-direction: column;
+      margin-top: -50px;
+      flex-direction: column;
+      padding: 0 5% 10%;
+    }
+  }
+  .skills ul {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+  .about {
+    grid-template-areas: 'card1 card2' 'card3 card4' 'portrait text';
+    grid-template-columns: 1fr 1fr;
+  }
+  .portfolio {
+    flex-direction: column;
+    .project-tile.active h2 {
+      padding-top: 0;
+    }
+  }
+  .skills ul {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  .about {
+    grid-template-areas: 'card1' 'card2' 'card3' 'card4' 'portrait' 'portrait' 'text' 'text';
+    grid-template-columns: 1fr;
+  }
+  .skills ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

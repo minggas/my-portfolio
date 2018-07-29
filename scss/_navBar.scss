@@ -1,0 +1,96 @@
+.nav-bar {
+  padding: 1rem 3%;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: set-text-color($primary-color);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  @include easeOut();
+  background-color: $primary-color;
+  .nav-logo {
+    flex: 1;
+  }
+  .collapse-menu {
+    flex: 3;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    flex-direction: row;
+    background: transparent;
+    .nav-link span {
+      margin: 0 15px;
+      font-size: calc(0.8rem + 0.4vw);
+      padding: 2px 5px;
+      border-radius: 5px;
+      letter-spacing: 4px;
+      color: set-text-color($primary-color);
+      font-weight: 700;
+      &:hover {
+        color: $secondary-color;
+      }
+      &.active {
+        color: set-text-color($secondary-color);
+        background: $secondary-color;
+        cursor: default;
+      }
+    }
+    &.mobile {
+      padding: 1rem 0 0.3rem;
+      position: absolute;
+      top: 4rem;
+      right: 100%;
+      width: 100%;
+      flex-direction: column;
+      @include easeOut();
+      z-index: 0;
+      background: rgba($primary-color, 0.9);
+      .nav-link {
+        margin: 0.8rem 0;
+      }
+      &.show {
+        right: 0;
+      }
+    }
+  }
+}
+
+.nav-toggler {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 23px;
+  cursor: pointer;
+  @include easeOut;
+  &.mobile {
+    visibility: visible;
+    opacity: 1;
+    .btn-line {
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      background: set-text-color($primary-color);
+      @include easeOut;
+    } // Rotate Into X With Menu Lines
+    &.close {
+      transform: rotate(180deg);
+      .btn-line {
+        // Line 1 - Rotate
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        } // Line 2 - Hide
+        &:nth-child(2) {
+          opacity: 0;
+        } // Line 3 - Rotate
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+      }
+    }
+  }
+}

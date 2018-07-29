@@ -1,0 +1,51 @@
+.contact {
+  li,
+  ul {
+    display: flex;
+    height: 100%;
+    margin: .8rem;
+  }
+  li {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    width: 3rem;
+    height: 3rem;
+    &:hover svg {
+      fill: $secondary-color;
+    }
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 2.5rem;
+  padding: 1rem;
+  background-color: lighten($primary-color, 50);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  input[type="submit"] {
+    width: 9rem;
+    text-align: center;
+    align-self: center;
+    padding: 1rem 2rem;
+    background-color: darken($primary-color, 20);
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+  .form-input {
+    margin: .4rem;
+    padding: .5rem;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.contact-form,
+.contact-form>* {
+  border-radius: 5px;
+}

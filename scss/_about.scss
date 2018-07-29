@@ -1,0 +1,98 @@
+.tagline {
+  width: 100%;
+  height: 16rem;
+  background-color: lighten($primary-color, 10);
+  padding-top: 6.5rem;
+  font-variant: small-caps;
+  font-size: calc(0.8rem + 1.2vw);
+  text-align: center;
+  color: set-text-color(lighten($primary-color, 10));
+  h2 {
+    letter-spacing: .4rem;
+  }
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "card1 card2 card3 card4" "portrait portrait text text";
+  grid-gap: 1rem;
+  padding: 1rem 1.5rem 5rem;
+  background-color: lighten($primary-color, 40);
+  color: set-text-color(lighten($primary-color, 40));
+  .skill-card {
+    grid-column: span 1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 0;
+    padding: 1%;
+    .img-card {
+      background-color: lighten($primary-color, 40);
+      border-radius: 50%;
+      min-width: 6rem;
+      height: 100px;
+      text-align: center;
+      padding: 1rem;
+      font-size: calc(2.1rem + 2.2vw);
+    }
+    .text-card {
+      font-size: 1.3rem;
+      letter-spacing: 1.2px;
+      text-align: center;
+      font-weight: 400;
+      margin-top: 5px;
+      text-transform: uppercase;
+      dd {
+        line-height: 1rem;
+        font-size: 0.8rem;
+        margin: 0.7rem;
+      }
+    }
+  }
+  .bio-image {
+    grid-area: portrait;
+    display: block;
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+}
+
+.card1 {
+  grid-area: card1;
+}
+
+.card2 {
+  grid-area: card2;
+}
+
+.card3 {
+  grid-area: card3;
+}
+
+.card4 {
+  grid-area: card4;
+}
+
+.banner-text {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  .banner-title {
+    line-height: 3rem;
+    color: $secondary-color;
+    font-size: calc(2rem + 1vw);
+  }
+  span {
+    font-size: calc(0.8rem + 0.8vw);
+    line-height: 2rem;
+    letter-spacing: .2rem;
+    margin-top: 10px;
+  }
+}

@@ -4,8 +4,9 @@
   "description": "Minggas portfolio",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w /scss -o dist/css/ --recursive",
-    "babel": "npx babel js/main.js --watch --out-file dist/js/main.js"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "babel": "babel --plugins transform-es2015-arrow-functions js/main.js --watch --out-file dist/js/main.js",
+    "dev": "concurrently --kill-others \"npm run sass\" \"npm run babel\""
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,9 @@
   },
   "homepage": "https://minggas.github.io/my-portfolio",
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "node-sass": "^4.9.2",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "concurrently": "^3.6.1"
   }
 }

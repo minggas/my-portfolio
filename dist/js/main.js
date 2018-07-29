@@ -1,5 +1,5 @@
 //NavBar module
-(function() {
+(function () {
   "use strict";
 
   const navMenu = document.querySelector(".collapse-menu");
@@ -14,10 +14,7 @@
       navMenu.classList.add("mobile");
       menuToggle.classList.add("mobile");
       console.log(size);
-    } else if (
-      navMenu.classList.contains("mobile") &&
-      menuToggle.classList.contains("mobile")
-    ) {
+    } else if (navMenu.classList.contains("mobile") && menuToggle.classList.contains("mobile")) {
       navMenu.classList.remove("mobile");
       menuToggle.classList.remove("mobile");
     }
@@ -25,10 +22,10 @@
   //Debounce Function to minimize the numbers of scroll events
   function debounce(func, wait = 10, immediate = true) {
     var timeout;
-    return function() {
+    return function () {
       var context = this,
-        args = arguments;
-      var later = function() {
+          args = arguments;
+      var later = function () {
         timeout = null;
         if (!immediate) {
           func.apply(context, args);
@@ -44,18 +41,14 @@
   }
 
   function checkSlide() {
-    sections.forEach(section => {
-      const sectionAt =
-        window.scrollY + window.innerHeight - section.offsetHeight / 2;
+    sections.forEach(function (section) {
+      const sectionAt = window.scrollY + window.innerHeight - section.offsetHeight / 2;
       const imageBottom = section.offsetTop + section.offsetHeight;
       const isHalfShown = sectionAt > section.offsetTop;
       const isNotScrolledPast = window.scrollY < imageBottom;
       if (isHalfShown && isNotScrolledPast) {
         document.querySelector(".active").setAttribute("class", " ");
-        document
-          .querySelector("a[href*=" + section.id + "]")
-          .querySelector("span")
-          .setAttribute("class", "active");
+        document.querySelector("a[href*=" + section.id + "]").querySelector("span").setAttribute("class", "active");
       }
     });
   }
@@ -65,12 +58,14 @@
     menuToggle.classList.toggle("close");
   }
 
-  links.forEach(link => link.addEventListener("click", toggleHidden));
+  links.forEach(function (link) {
+    return link.addEventListener("click", toggleHidden);
+  });
   menuToggle.addEventListener("click", toggleHidden);
   window.addEventListener("scroll", debounce(checkSlide));
   //Smooth scroll to nav throught page
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener("click", function (e) {
       e.preventDefault();
       document.querySelector(this.getAttribute("href")).scrollIntoView({
         behavior: "smooth"
@@ -81,13 +76,16 @@
 })();
 
 //Panels for Portfolio
-(function() {
+(function () {
   "use strict";
+
   const panels = document.querySelectorAll(".project-tile");
-  panels.forEach(panel => panel.addEventListener("click", toggleOpen));
-  panels.forEach(panel =>
-    panel.addEventListener("transitionend", toggleActive)
-  );
+  panels.forEach(function (panel) {
+    return panel.addEventListener("click", toggleOpen);
+  });
+  panels.forEach(function (panel) {
+    return panel.addEventListener("transitionend", toggleActive);
+  });
 
   function toggleOpen() {
     this.classList.toggle("open");
@@ -102,6 +100,4 @@
 })();
 
 //Put year on footer
-document.getElementById(
-  "footerTxt"
-).innerHTML = `minggas@${new Date().getFullYear()}`;
+document.getElementById("footerTxt").innerHTML = `minggas@${new Date().getFullYear()}`;
