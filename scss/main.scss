@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC');
+@import 'config';
+@import 'navBar';
+@import 'header';
+@import 'about';
+@import 'projects';
+@import 'skills';
+@import 'contact';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+body {
+  background-color: $primary-color;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: $secondary-color;
+  font-size: calc(20px + 1.5vw);
+  letter-spacing: 3px;
+}
+
+.skills,
+.contact {
+  padding: 2%;
+}
+
+textarea {
+  resize: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  padding: 2%;
+  background: darken($primary-color, 30);
+  color: set-text-color(darken($primary-color, 30));
+  margin-top: 30px;
+}
+
+@import 'mobile';

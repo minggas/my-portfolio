@@ -1,0 +1,137 @@
+.portfolio {
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  min-height: 400px;
+  display: flex;
+  overflow: hidden;
+  .project-tile {
+    padding: 1rem;
+    flex: 1;
+    @include easeOut();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    &>* {
+      flex: 1;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include easeOut();
+    }
+    .img-port {
+      display: none;
+      width: 50%;
+      background-color: $secondary-color;
+      margin-bottom: 1rem;
+      border: 3px solid $secondary-color;
+      border-radius: 5px;
+      box-shadow: 0px 0px 14px 1px rgba(0, 0, 0, 0.68);
+      img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid hsla(203, 21%, 90%, 0.2);
+        &:hover {
+          opacity: 0.4;
+        }
+      }
+      &.show {
+        display: block;
+      }
+    }
+    .btn {
+      flex: 0.2;
+      display: block;
+      padding: 0.2rem 1rem;
+      width: 40%;
+      height: 1.5rem;
+      border: 0;
+      margin-bottom: 0.3rem;
+      border-radius: 1rem;
+      @include easeOut();
+      &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+      }
+    }
+    .btn-dark {
+      @extend .btn;
+      transform: translate3d(100vw, 0, 0);
+      background: darken($primary-color, 20);
+      color: set-text-color(darken($primary-color, 20));
+    }
+    .btn-light {
+      @extend .btn;
+      transform: translate3d(-100vw, 0, 0);
+      background: lighten($primary-color, 20);
+      color: set-text-color(lighten($primary-color, 20));
+    }
+    span:last-child {
+      transform: translate3d(0, 50vh, 0);
+    }
+    span:first-child {
+      transform: translate3d(0, -50vh, 0);
+    }
+    &.open {
+      flex: 6;
+      .img-port {
+        @include easeOut();
+        display: block;
+        transform: perspective(500px) translate3d(0, 0, -500px);
+      }
+    }
+    &.active {
+      cursor: default;
+      span:last-child,
+      span:first-child {
+        transform: translate3d(0, 0, 0);
+      }
+      .img-port {
+        display: block;
+        transform: perspective(500px) translate3d(0, 0, 0);
+      }
+      .btn {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+
+.project-tile {
+  h2 {
+    padding-top: 4rem;
+    font-size: calc(1rem + 1.5vw);
+  }
+  &.port1 {
+    background: lighten($primary-color, 8);
+    h2,
+    span {
+      color: set-text-color(lighten($primary-color, 8));
+    }
+  }
+  &.port2 {
+    background: lighten($tertiary-color, 10);
+    h2,
+    span {
+      color: set-text-color(lighten($tertiary-color, 10));
+    }
+  }
+  &.port3 {
+    background: darken($tertiary-color, 2);
+    h2,
+    span {
+      color: set-text-color(darken($tertiary-color, 20));
+    }
+  }
+  &.port4 {
+    background: darken($primary-color, 2);
+    h2,
+    span {
+      color: set-text-color(darken($primary-color, 2));
+    }
+  }
+}

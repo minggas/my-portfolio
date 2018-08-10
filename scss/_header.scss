@@ -1,0 +1,18 @@
+header {
+  @include background;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5%;
+  .main-text-header {
+    color: set-text-color($primary-color);
+    font-size: calc(2.5rem + 15vw);
+    padding: 5rem 0 0.2rem;
+    z-index: 1;
+    span {
+      color: $secondary-color;
+    }
+  }
+}
