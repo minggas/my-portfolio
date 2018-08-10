@@ -9,34 +9,42 @@
     height: 100px;
     display: flex;
     padding: 5px;
+    position: relative;
     img {
       display: block;
       margin: auto;
       width: 100%;
       height: auto;
+      transform: scale(0.8);
+      filter: grayscale(100%);
+      @include easeOut();
+      &:hover {
+        transform: scale(1);
+        filter: grayscale(0%);
+      }
     }
     .info {
       visibility: hidden;
       opacity: 0;
-      position: relative;
-      height: 140px;
-      top: -150%;
+      position: absolute;
+      min-width: 140px;
+      top: -95%;
       font-size: 0.7rem;
-      right: 5rem;
-      padding: 0.5rem 1rem;
+      right: -2rem;
+      padding: 0.8rem 1rem;
       border-radius: 5px;
-      background-color: darken($primary-color, 50);
-      color: set-text-color(darken($primary-color, 50));
+      background-color: $secondary-color;
+      color: set-text-color($secondary-color);
       @include easeOut();
       &:after {
         content: '';
         position: absolute;
-        top: 135px;
-        right: 60px;
+        top: 93%;
+        right: 50%;
         width: 10px;
         height: 10px;
         transform: rotate3d(0, 0, 1, 45deg);
-        background-color: darken($primary-color, 50);
+        background-color: inherit;
       }
     }
     &:hover .info {

@@ -1,7 +1,8 @@
-$primary-color: #A2A0BA;
-$secondary-color: #eece1a;
-$text-color-dark-bg: #ccc;
-$text-color-light-bg: #333;
+$primary-color: hsl(213, 24%, 16%);
+$secondary-color: hsl(176, 96%, 69%);
+$tertiary-color: hsl(210, 2%, 78%);
+$text-color-dark-bg: hsl(0, 0%, 80%);
+$text-color-light-bg: hsl(0, 0%, 20%);
 $show-home-image: true;
 $home-image: url(../assets/background.jpg);
 $background-opacity: 0.9;
@@ -23,7 +24,7 @@ $background-opacity: 0.9;
         width: 100%;
         height: 100%;
         z-index: 0;
-        background: rgba($primary-color, $background-opacity);
+        background: rgba(#666, $background-opacity);
       }
     }
   }

@@ -1,7 +1,7 @@
 .tagline {
   width: 100%;
   height: 16rem;
-  background-color: lighten($primary-color, 10);
+  background-color: lighten($primary-color, 5);
   padding-top: 6.5rem;
   font-variant: small-caps;
   font-size: calc(0.8rem + 1.2vw);
@@ -17,9 +17,8 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "card1 card2 card3 card4" "portrait portrait text text";
   grid-gap: 1rem;
-  padding: 1rem 1.5rem 5rem;
-  background-color: lighten($primary-color, 40);
-  color: set-text-color(lighten($primary-color, 40));
+  padding: 1rem 1.5rem;
+  color: set-text-color($primary-color);
   .skill-card {
     grid-column: span 1;
     display: flex;
@@ -54,9 +53,9 @@
     grid-area: portrait;
     display: block;
     width: 80%;
-    max-width: 250px;
+    max-width: 280px;
     height: auto;
-    margin: auto;
+    margin: 1.5rem auto;
     border-radius: 50%;
     border: $secondary-color 3px solid;
   }

@@ -10,7 +10,9 @@
   top: 0;
   z-index: 2;
   @include easeOut();
-  background-color: $primary-color;
+  &.show {
+    background-color: $primary-color;
+  }
   .nav-logo {
     flex: 1;
   }
@@ -22,6 +24,7 @@
     flex-direction: row;
     background: transparent;
     .nav-link span {
+      @include easeOut();
       margin: 0 15px;
       font-size: calc(0.8rem + 0.4vw);
       padding: 2px 5px;

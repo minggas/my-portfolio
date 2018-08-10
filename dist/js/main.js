@@ -10,6 +10,7 @@
   window.addEventListener("resize", navToggler);
   function navToggler() {
     const size = document.body.clientWidth;
+
     if (size < 700) {
       navMenu.classList.add("mobile");
       menuToggle.classList.add("mobile");
@@ -41,6 +42,12 @@
   }
 
   function checkSlide() {
+    console.log(window.scrollY);
+    if (window.scrollY > 20) {
+      document.querySelector(".nav-bar").classList.add("show");
+    } else {
+      document.querySelector(".nav-bar").classList.remove("show");
+    }
     sections.forEach(function (section) {
       const sectionAt = window.scrollY + window.innerHeight - section.offsetHeight / 2;
       const imageBottom = section.offsetTop + section.offsetHeight;

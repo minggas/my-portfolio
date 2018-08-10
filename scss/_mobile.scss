@@ -1,4 +1,12 @@
 @include mediaXl {
+  .about {
+    .skill-card {
+      flex-direction: column;
+      margin-top: -50px;
+      flex-direction: column;
+      padding: 0 5% 10%;
+    }
+  }
   .skills ul {
     grid-template-columns: repeat(9, minmax(0, 1fr));
   }
