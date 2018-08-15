@@ -7,7 +7,12 @@
   const sections = document.querySelectorAll(".section");
   const links = document.querySelectorAll(".nav-link");
 
+  //Events Listeners
   window.addEventListener("resize", navToggler);
+  links.forEach(link => link.addEventListener("click", toggleHidden));
+  menuToggle.addEventListener("click", toggleHidden);
+  window.addEventListener("scroll", debounce(checkSlide));
+
   function navToggler() {
     const size = document.body.clientWidth;
 
@@ -45,7 +50,6 @@
   }
 
   function checkSlide() {
-    console.log(window.scrollY);
     if (window.scrollY > 20) {
       document.querySelector(".nav-bar").classList.add("show");
     } else {
@@ -72,9 +76,6 @@
     menuToggle.classList.toggle("close");
   }
 
-  links.forEach(link => link.addEventListener("click", toggleHidden));
-  menuToggle.addEventListener("click", toggleHidden);
-  window.addEventListener("scroll", debounce(checkSlide));
   //Smooth scroll to nav throught page
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
